@@ -1,0 +1,15 @@
+version: '3.10'
+
+services:
+  web:
+    image: fastapi-app
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    secrets:
+      - API_TOKEN
+
+secrets:
+  API_TOKEN:
+    external: true
